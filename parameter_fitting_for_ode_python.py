@@ -38,7 +38,7 @@ def sir_model(y, t, beta, gamma):
     dRdt = gamma * I
     return [dSdt, dIdt, dRdt]
 
-#Define a function to fit the data (this is what we'll fit)
+#Define a function to fit the data
 def fit_odeint(t, beta, gamma):
     return odeint(sir_model, (S0, I0, R0), t, args=(beta, gamma))[:,1]
 
@@ -77,7 +77,7 @@ print('Best hyperparameters: ', space_eval(params,Best))
 #'beta_param': 0.002238741669659896, 'gamma_param': 0.4531449898895715
 #274.5612634215566
 
-#%% Redefine model and solve with optimal paramters
+#%% Redefine model and solve with optimal parameters
 time_data = np.linspace(0,14,100) 
 
 # Define the SIR model
@@ -163,7 +163,7 @@ Best = fmin(fn=loss_rxn,
             trials=trials)
 print('Best hyperparameters: ', space_eval(params,Best))
 
-#Hyperopt best parameters
+#Hyperopt best parameters (using all the data for fitting the model)
 #{'k1_param': 0.5020527339701352, 'k2_param': 0.09966421672345421}
 #0.009912599292233258
 
