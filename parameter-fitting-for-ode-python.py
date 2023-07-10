@@ -110,7 +110,7 @@ plt.show()
 
 #%%
 """
-Let's consider a more complex scenario: a consecutive first-order reaction 
+Let's consider a reaction scheme: a consecutive first-order reaction 
 where species A transforms into B, which further transforms into C.
 
 The reaction scheme is: A --> B --> C
